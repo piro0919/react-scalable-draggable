@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "declaration": true,
+    "jsx": "react",
+    "lib": ["es6", "dom"],
+    "module": "commonjs",
+    "outDir": "./lib",
+    "paths": {
+      "react": ["node_modules/@types/react"]
+    },
+    "strict": true,
+    "target": "es5",
+    "typeRoots": ["node_modules/@types"]
+  },
+  "exclude": ["node_modules/*", "public/*"],
+  "include": ["src/*"]
+}
