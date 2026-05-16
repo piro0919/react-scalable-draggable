@@ -1,57 +1,91 @@
 {
+  "name": "react-scalable-draggable",
+  "version": "1.0.0",
+  "description": "Draggable React component that respects CSS-transformed (scaled) parent containers.",
+  "keywords": [
+    "react",
+    "draggable",
+    "drag",
+    "scale",
+    "transform",
+    "pointer-events"
+  ],
+  "license": "MIT",
   "author": "piro <piro.haniwa@gmail.com> (https://kk-web.link/)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/piro0919/react-scalable-draggable.git"
+  },
+  "homepage": "https://react-scalable-draggable.kkweb.io",
   "bugs": {
     "url": "https://github.com/piro0919/react-scalable-draggable/issues"
   },
-  "dependencies": {
-    "@types/react": "^16.7.18",
-    "jquery": "^3.3.1",
-    "jquery-ui-dist": "^1.12.1",
-    "react": "^16.7.0"
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
   },
-  "description": "react-scalable-draggable",
-  "devDependencies": {
-    "@types/jquery": "^3.3.29",
-    "@types/react-dom": "^16.0.11",
-    "@types/react-router-dom": "^4.3.1",
-    "@types/styled-components": "^4.1.4",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^8.0.4",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "html-webpack-plugin": "^3.2.0",
-    "react-dom": "^16.7.0",
-    "react-router-dom": "^4.3.1",
-    "styled-components": "^4.1.3",
-    "ts-loader": "^5.3.2",
-    "typescript": "^3.2.2",
-    "typings": "^2.1.1",
-    "webpack": "^4.28.2",
-    "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.14",
-    "webpack-merge": "^4.1.5"
-  },
-  "homepage": "https://kk-web.link/",
-  "keywords": [
-    "draggable",
-    "react",
-    "react-scalable-draggable",
-    "scalable"
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
   ],
-  "license": "MIT",
-  "main": "./lib/index.js",
-  "name": "react-scalable-draggable",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/piro0919/react-scalable-draggable.git"
-  },
+  "sideEffects": false,
   "scripts": {
-    "build": "webpack --config webpack.prod.js && rm -rf docs && mv build docs",
-    "build:package": "tsc",
-    "start": "webpack-dev-server"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "build:lib": "tsup",
+    "build:lib:watch": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "pnpm run lint && pnpm run typecheck && pnpm run test && pnpm run build:lib"
   },
-  "types": "./lib/index.d.ts",
-  "version": "0.0.4"
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/node": "25.8.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.18.0",
+    "@typescript-eslint/parser": "^8.18.0",
+    "babel-plugin-react-compiler": "^1.0.0",
+    "eslint": "^9.17.0",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "jsdom": "^25.0.1",
+    "lefthook": "^2.0.13",
+    "next": "^16.0.0",
+    "prettier": "^3.4.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@10.27.0",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "lefthook",
+      "sharp"
+    ]
+  }
 }

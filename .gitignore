@@ -1,4 +1,12 @@
+node_modules/
+dist/
+.next/
+.vercel/
+coverage/
+*.log
+*.tsbuildinfo
 .DS_Store
-npm-debug.log
-node_modules
-package-lock.json
+.env
+.env.*
+.vscode/
+.vercel
