@@ -1,6 +1,6 @@
 {
   "name": "react-scalable-draggable",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Draggable React component that respects CSS-transformed (scaled) parent containers.",
   "keywords": [
     "react",
